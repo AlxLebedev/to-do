@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo</title>
+</head>
+<body>
+  <div class="todo-section">
+    <form id="input-form">
+      <p>Enter a new task</p>
+      <input type="text" id="input-field">
+    </form>
+    <div class="error hidden">
+      <span class='error-text'>Please, enter your task and press Enter</span>
+      <span class="close-error">x</span>
+    </div>
+
+    <p>Pinned tasks:</p>
+    <div id="pinned-tasks" class="tasks"></div>
+  
+    <p>All tasks:</p>
+    <div id="all-tasks" class="tasks"></div>
+  </div>
+</body>
+</html>
