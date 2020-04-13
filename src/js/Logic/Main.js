@@ -1,8 +1,8 @@
 /* eslint-disable class-methods-use-this */
 import TasksCollection from '../Data/TasksCollection';
 import DrawUI from '../UI/DrawUI';
-import defaultData from '../Data/DefaultData';
-
+//import defaultData from '../Data/DefaultData';
+import {tasks} from '../app';
 
 const tasksCollection = new TasksCollection();
 const drawUI = new DrawUI();
@@ -17,10 +17,11 @@ export default class Main {
   }
 
   init() {
-    defaultData(tasksCollection);
-
-    drawUI.redrawUI(tasksCollection.tasks);
-
+    //defaultData(tasksCollection);
+    tasksCollection.tasks = tasks;
+    //drawUI.redrawUI(tasksCollection.tasks);
+    //drawUI.redrawUI(tasks);
+    
     this.startLogic();
   }
 
@@ -77,7 +78,7 @@ export default class Main {
       const trueName = item.descriprion.toLowerCase().includes(valueToLowerCase);
       return trueName || item.pinned;
     });
-    drawUI.redrawUI(filteredTasks);
+    drawUI.draw(filteredTasks);
   }
 
   moveTask(itemIdTask, pinned) {

@@ -4,7 +4,7 @@ export default class DrawUI {
     this.allTasks = document.getElementById('all-tasks');
   }
 
-  redrawUI(tasks) {
+  draw(tasks) {
     this.pinnedTasks.innerHTML = '';
     this.allTasks.innerHTML = '';
 
