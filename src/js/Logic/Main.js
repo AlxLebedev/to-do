@@ -1,8 +1,9 @@
 /* eslint-disable class-methods-use-this */
+/* eslint-disable import/no-cycle */
 import TasksCollection from '../Data/TasksCollection';
 import DrawUI from '../UI/DrawUI';
-//import defaultData from '../Data/DefaultData';
-import {tasks} from '../app';
+// import defaultData from '../Data/DefaultData';
+import tasks from '../app';
 
 const tasksCollection = new TasksCollection();
 const drawUI = new DrawUI();
@@ -17,11 +18,11 @@ export default class Main {
   }
 
   init() {
-    //defaultData(tasksCollection);
+    // defaultData(tasksCollection);
     tasksCollection.tasks = tasks;
-    //drawUI.redrawUI(tasksCollection.tasks);
-    //drawUI.redrawUI(tasks);
-    
+    // drawUI.redrawUI(tasksCollection.tasks);
+    // drawUI.redrawUI(tasks);
+
     this.startLogic();
   }
 

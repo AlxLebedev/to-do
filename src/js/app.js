@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import Main from './Logic/Main';
 import TasksCollection from './Data/TasksCollection';
 import DrawUI from './UI/DrawUI';
@@ -8,8 +9,8 @@ const drawUI = new DrawUI();
 const main = new Main();
 
 defaultData(tasksCollection);
-const tasks = tasksCollection.tasks;
-export {tasks};
+const { tasks } = tasksCollection;
+export default tasks;
 
 drawUI.draw(tasks);
 main.init();
